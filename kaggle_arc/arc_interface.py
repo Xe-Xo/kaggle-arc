@@ -8,7 +8,7 @@ from colored import attr, bg, fg
 from matplotlib import pyplot as plt
 
 
-from arc_types import Grid, GridList, List, Tuple
+from kaggle_arc.arc_types import Grid, GridList, List, Tuple
 
 COLORMAP = {0: 0, 1: 4, 2: 1, 3: 2, 4: 3, 5: 8, 6: 5, 7: 166, 8: 6, 9: 52}
 CELL_PADDING_STR = " " * 1

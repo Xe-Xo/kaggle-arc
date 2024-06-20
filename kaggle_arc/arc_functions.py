@@ -1,6 +1,6 @@
 
 
-from arc_types import *
+from kaggle_arc.arc_types import *
 
 def identity(
     x: Any
