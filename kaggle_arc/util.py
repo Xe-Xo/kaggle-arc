@@ -28,16 +28,16 @@ def read_single_dataset(basedir, prefix) -> list[Riddle]:
         train_pairs = []
 
         for i in train:
-            ib = Board(__root__=i['input'])
-            ob = Board(__root__=i['output'])
+            ib = Board(root=i['input'])
+            ob = Board(root=i['output'])
             train_pairs.append(BoardPair(input=ib, output=ob))
 
         test_pairs = []
 
         for i in test:
 
-            ib = Board(__root__=i['input'])
-            ob = Board(__root__=solutions[key][0])
+            ib = Board(root=i['input'])
+            ob = Board(root=solutions[key][0])
             test_pairs.append(BoardPair(input=ib, output=ob))
         
         r = Riddle(test=test_pairs, train=train_pairs, riddle_id=key)

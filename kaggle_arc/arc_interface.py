@@ -20,16 +20,16 @@ def listit(t):
     # Iterates through a list of lists and converts them to tuples.
     return tuple(map(listit, t)) if isinstance(t, (List, Tuple)) else t
 
-class Board(pydantic.BaseModel):
+class Board(pydantic.RootModel):
 
     """
     A list of a list of integers that represent either the input or the output state.
     """
-    __root__: GridList
+    root: GridList
 
     @property
     def data(self) -> Grid:
-        return listit(self.__root__)
+        return listit(self.root)
     
     @property
     def num_rows(self) -> int:
@@ -91,8 +91,8 @@ class BoardPair(pydantic.BaseModel):
     @property
     def dictionary(self):
         return {
-            'input': self.input.__root__,
-            'output': self.input.__root__
+            'input': self.input.root,
+            'output': self.input.root
         }
 
     def fmt(self, colored=False, with_output=True) -> str:
@@ -160,7 +160,6 @@ class Riddle(pydantic.BaseModel):
 
         plt.tight_layout()
         return fig, axs
-
 
 
 
