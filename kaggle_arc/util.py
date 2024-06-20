@@ -12,11 +12,11 @@ def read_single_dataset(basedir, prefix) -> list[Riddle]:
     solutions_file = basedir / f"{prefix}_solutions.json"
     if not challenges_file.exists():
         return None
-    with open(challenges_file.as_posix()) as f:
+    with open(challenges_file) as f:
         riddles = json.load(f)
     solutions = {}
     if solutions_file.exists():
-        with open(solutions_file.as_posix()) as f:
+        with open(solutions_file) as f:
             solutions = json.load(f)
 
     riddles_list = []

@@ -2,6 +2,8 @@ input
 temp
 working
 data
+test.py
+
 
 **/__pycache__
 **/.ipynb_checkpoints
