@@ -124,7 +124,7 @@ class Riddle(pydantic.BaseModel):
     train: list[BoardPair]
     test: list[BoardPair]
     riddle_id: Optional[str] = None
-    subdir: str
+
 
 
     @property
@@ -135,9 +135,9 @@ class Riddle(pydantic.BaseModel):
         }
 
 
-    def save_json(self):
+    def save_json(self,subdir):
 
-        with open(f'data/{self.subdir}/{self.riddle_id}.json', 'w', encoding='utf-8') as f:
+        with open(f'data/{subdir}/{self.riddle_id}.json', 'w', encoding='utf-8') as f:
             json.dump(self.dictionary, f, ensure_ascii=False, indent=4)
             
 
