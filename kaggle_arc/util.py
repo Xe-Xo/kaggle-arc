@@ -3,7 +3,7 @@ import tqdm
 from pathlib import Path
 
 
-from arc_interface import Board, BoardPair, Riddle
+from kaggle_arc.arc_interface import Board, BoardPair, Riddle
 
 def read_single_dataset(basedir, prefix) -> list[Riddle]:
     if isinstance(basedir, str):
